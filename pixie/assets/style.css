@@ -1,0 +1,144 @@
+:root {
+    --burgundy: #662a1a;
+    --burnt: #ae5127;
+    --light-beige: #E6C99C;
+    --cream: #FFF9EF;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.nav-top {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px 50px 0 50px;
+    z-index: 30;
+}
+
+.nav-top i, .right-side li a{
+    color: var(--cream);
+}
+
+.logo-nav img {
+    width: 110px;
+    height: 120px; 
+}
+
+.left-side, .right-side ul, .right-side {
+    display: inline-flex;
+}
+
+.left-side i {
+    padding-right: 10px;
+}
+
+.right-side i {
+    padding-left: 10px;
+}
+
+.nav-top li {
+    list-style: none;
+}
+
+.right-side li a {
+    text-decoration: none;
+    padding-left: 40px;
+    font-size: 13px;
+}
+
+.corner {
+    padding-right: 30px;
+}
+
+.logo-nav {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}
+
+.nav-top i:hover, .logo-nav:hover {
+    cursor: pointer;
+}
+
+.home {
+    height: 100vh;
+    position: relative;
+}
+
+.next {
+    z-index: 15;
+    color: var(--cream);
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    transform: translate(-5%, -40%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.arrow-forward {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.next:hover {
+    cursor: pointer;
+}
+
+.first-slide img, .second-slide img, .third-slide img {
+    height: 100vh;
+    width: 100vw;
+}
+
+.first-slide {
+    z-index: 10;
+}
+
+.slide {
+    position: absolute;
+    top: -67px;
+}
+
+.dots {
+    position: absolute;
+    top: 75%;
+    left: 53%;
+    transform: translate(-53%, -75%);
+    z-index: 15;
+}
+
+.circle {
+    width: 8px;
+    height: 8px;
+    border: .5px solid var(--cream);
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-flex;
+}
+
+.circle {
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--cream)
+}
+
