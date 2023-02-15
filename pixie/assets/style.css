@@ -20,6 +20,13 @@ body {
 
 h1, h2, h3 {
     font-family: "Italiana", serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 90px;
+    font-weight: 200;
+    line-height: 70px;
 }
 
 /*-------------NAV BAR-----------------*/
@@ -35,7 +42,7 @@ h1, h2, h3 {
     z-index: 30;
 }
 
-.nav-top i, .right-side li a{
+.nav-top i, .right-side li a {
     color: var(--cream);
 }
 
@@ -44,7 +51,7 @@ h1, h2, h3 {
     height: 120px; 
 }
 
-.left-side, .right-side ul, .right-side {
+.left-side, .right-side ul {
     display: inline-flex;
 }
 
@@ -63,8 +70,8 @@ h1, h2, h3 {
 .right-side li a {
     text-decoration: none;
     padding-left: 40px;
-    font-size: 13px;
-    font-family: "Italiana", serif;
+    font-size: 11px;
+    text-transform: uppercase;
 }
 
 .corner {
@@ -90,12 +97,13 @@ h1, h2, h3 {
 
 .slide {
     position: absolute;
-    top: -61px;
+    top: -67px;
     transition: .5s;
     height: 100vh;
     width: 100vw;
     display: inline-flex;
     animation: slide 36s ease infinite;
+    position: relative;
 }
 
 
@@ -139,16 +147,27 @@ h1, h2, h3 {
 } */
 
 /*----HERO IMAGES--------*/
+
 .first-slide img, .second-slide img, .third-slide img {
     height: 100vh;
     width: 100vw;
 }
 
+.screen {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: .4;
+    z-index: 11;
+}
+
 .dots {
     position: absolute;
-    top: 75%;
+    top: 85%;
     left: 53%;
-    transform: translate(-53%, -75%);
+    transform: translate(-53%, -85%);
     z-index: 15;
 }
 
@@ -231,3 +250,133 @@ h1, h2, h3 {
     top: 120%;
     left: -10%;
 }
+
+/*-------------LINGERIE HEADING-----------------*/
+.lingerie-intro {
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 12em;
+    position: relative;
+}
+
+.lingerie-heading {
+    width: 800px;
+    position: absolute;
+    top: -50px;
+    transform: translateY(-50px);
+}
+
+.lingerie-heading h1 {
+    font-size: 95px;
+}
+
+.lingerie-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.lingerie-image img {
+    width: 400px;
+    justify-self: right;
+}
+
+.lingerie-content p {
+    width: 70%;
+    font-size: 15px;
+    line-height: 16px;
+}
+
+.btn {
+    width: 35%;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 20px;
+    letter-spacing: -1px;
+    border: 2px solid #0e0e0e;
+    background-color: transparent;
+    color: #000000;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.lingerie-absolute {
+    position: absolute;
+    top: 75%;
+    right: 10%;
+}
+
+.lingerie-absolute img {
+    width: 380px;
+    height: 210px;
+}
+
+/*-------------SLEEPWEAR SECTION-----------------*/
+.sleep-wear {
+    margin-top: 15em;
+    width: 100%;
+    padding: 35px 0;
+    background-color: #F2DFC3;
+}
+
+.all-fabric {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.fabric {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.fabric img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.sleep-wear-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 4e
+}
+
+.sleep-wear-content {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.sleep {
+    font-size: 14px;
+    width: 45%;
+}
+
+/*-------------LINGERIE COLLECTION-----------------*/
+
+.collection {
+    width: 100%;
+    text-align: center;
+    margin-top: 10em;
+}
+
+.collection-content {
+    width: 50%;
+    margin: 0 auto;
+    
+}
+
+
+
+
