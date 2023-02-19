@@ -16,6 +16,7 @@ body {
     font-family: "Work Sans", sans-serif;
     background-color: var(--cream);
     overflow-x: hidden;
+    
 }
 
 h1, h2, h3 {
@@ -31,8 +32,10 @@ h1 {
 
 /*-------------NAV BAR-----------------*/
 .nav-top {
+    width: 100vw;
+    height: 20%;
     position: sticky;
-    top: 0;
+    top: 0;  
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,6 +43,11 @@ h1 {
     flex-wrap: nowrap;
     padding: 10px 50px 0 50px;
     z-index: 30;
+    transition: .4s ease;
+}
+
+.nav-top.hide {
+    transform: translateY(-100%);
 }
 
 .nav-top i, .right-side li a {
@@ -80,13 +88,45 @@ h1 {
 
 .logo-nav {
     position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -25%);
+    width: 90px;
+    height: 100px;
+    top: 10%;
+    left: 49%;
+    transform: translate(-49%, -25%);
+    background-image: url("../assets/5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .nav-top i:hover, .logo-nav:hover {
     cursor: pointer;
+}
+
+.nav-hover {
+    width: 100vw;
+    height: 40%;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    display: none;
+    transition: all .5s ease;
+
+}
+
+#lingerie a:hover .lingerie-nav {
+    display: block;
+}
+
+#fragrance a:hover .lingerie-nav {
+    display: block;
+}
+
+.other-nav {
+    transition: .4s ease;
+}
+.other-nav:hover {
+    opacity: .7;
 }
 
 /*-------------HERO PAGE-----------------*/
@@ -98,7 +138,6 @@ h1 {
 .slide {
     position: absolute;
     top: -67px;
-    transition: .5s;
     height: 100vh;
     width: 100vw;
     display: inline-flex;
@@ -151,6 +190,8 @@ h1 {
 .first-slide img, .second-slide img, .third-slide img {
     height: 100vh;
     width: 100vw;
+    transition: all .5s ease;
+    
 }
 
 .screen {
@@ -166,8 +207,8 @@ h1 {
 .dots {
     position: absolute;
     top: 85%;
-    left: 53%;
-    transform: translate(-53%, -85%);
+    left: 50%;
+    transform: translate(-50%, -85%);
     z-index: 15;
 }
 
@@ -183,6 +224,7 @@ h1 {
     border-radius: 50%;
     margin-right: 8px;
     display: inline-flex;
+    visibility: hidden;
 }
 
 .circle {
@@ -197,8 +239,8 @@ h1 {
 
 .popular-items {
     width: 60%;
-    margin: auto;
-    margin-top: 8em;
+    margin: 0 auto;
+    margin-top: 5em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
@@ -213,6 +255,41 @@ h1 {
 .pic img {
     height: 100%;
     width: 100%;
+}
+
+.click-hover {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.round {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.click-hover p {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    -ms-transform: translate(-50%, -47%);
+    transform: translate(-50%, -47%);
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: 90px;
+    text-align: center;
 }
 
 .roll {
@@ -231,16 +308,6 @@ h1 {
     animation: spin 30s linear infinite;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .reg-circle {
     width: 350px;
     height: 350px;
@@ -251,42 +318,46 @@ h1 {
     left: -10%;
 }
 
+.pic:hover {
+    cursor: pointer;
+}
+
+.pic:hover .click-hover {
+    opacity: 1;
+}
+
+
 /*-------------LINGERIE HEADING-----------------*/
 .lingerie-intro {
     margin: 0 auto;
-    width: 70%;
-    margin-top: 12em;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 8em;
     position: relative;
-}
-
-.lingerie-heading {
-    width: 800px;
-    position: absolute;
-    top: -50px;
-    transform: translateY(-50px);
-}
-
-.lingerie-heading h1 {
-    font-size: 95px;
+    background-color: #863C1B;
 }
 
 .lingerie-start {
+    width: 70%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: row;
+    gap: 30px;
+}
+
+.lingerie-content {
+    text-align: center;
+}
+
+.lingerie-content h1 {
+    color: #FFF9EF;
 }
 
 .lingerie-image img {
     width: 400px;
-    justify-self: right;
-}
-
-.lingerie-content p {
-    width: 70%;
-    font-size: 15px;
-    line-height: 16px;
 }
 
 .btn {
@@ -295,11 +366,12 @@ h1 {
     font-size: 16px;
     margin-top: 20px;
     letter-spacing: -1px;
-    border: 2px solid #0e0e0e;
+    border: 2px solid #FFF9EF;
     background-color: transparent;
-    color: #000000;
+    color: #FFF9EF;
     outline: none;
     text-transform: uppercase;
+    transition: .4s ease;
 }
 
 .btn:hover {
@@ -317,9 +389,61 @@ h1 {
     height: 210px;
 }
 
+.lingerie-content button:hover {
+    background-color: var(--cream);
+    color: #863C1B;
+}
+
+/*-------------LINGERIE SLIDER-----------------*/
+.slider-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 5em;
+    position: relative;
+    transition: all .7s ease;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow-x: hidden;
+    gap: 20px;
+    transition: all .7s ease;
+    scroll-behavior: smooth;
+}
+
+.slider img {
+    width: 250px;
+    height: 380px;
+}
+
+#previous, #next {
+    position: absolute;
+    top: 50%;
+}
+
+#previous {
+    left: -10%;
+    -ms-transform: translate(-10%, -50%);
+    transform: translate(-10%, -50%);
+}
+
+#next {
+    left: 110%;
+    -ms-transform: translate(-110%, -50%);
+    transform: translate(-110%, -50%);
+}
+
+.slider-wrapper i:hover {
+    cursor: pointer;
+}
+
 /*-------------SLEEPWEAR SECTION-----------------*/
 .sleep-wear {
-    margin-top: 15em;
+    margin-top: 5em;
     width: 100%;
     padding: 35px 0;
     background-color: #F2DFC3;
@@ -350,7 +474,6 @@ h1 {
 .sleep-wear-text {
     width: 100%;
     text-align: center;
-    margin-top: 4e
 }
 
 .sleep-wear-content {
@@ -359,8 +482,30 @@ h1 {
 }
 
 .sleep {
+    position: relative;
+}
+
+.sleep .btn {
     font-size: 14px;
     width: 45%;
+    color: #000000;
+    transition: all .5s ease;
+}
+
+.sleep .circle-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px dashed #000000;
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    transform: translate(-45%, -50%);
+    animation: spin 30s linear infinite;
+}
+
+.sleep .btn:hover {
+    transform: scale(1.03);
 }
 
 /*-------------LINGERIE COLLECTION-----------------*/
@@ -371,12 +516,36 @@ h1 {
     margin-top: 10em;
 }
 
+.collection h2 {
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 75px;
+}
+
+.collection p {
+    margin-top: -50px;
+}
+
 .collection-content {
     width: 50%;
     margin: 0 auto;
-    
+}
+
+.sleep .btn:hover .sleep .circle-button {
+    visibility: visible;
+
 }
 
 
 
 
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
