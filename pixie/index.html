@@ -19,37 +19,37 @@
         <div class="nav-top">
             <div class="left-side">
                 <nav>
-                    <i class='bx bxs-user bx-sm'></i>
-                    <i class='bx bx-heart bx-sm'></i>
+                    <i class='bx bxs-user bx-sm other-nav'></i>
+                    <i class='bx bx-heart bx-sm other-nav'></i>
                 </nav>
             </div>
             <div class="logo-nav">
-                <img src="./assets/5.png" alt="pixie logo">
             </div>
             <div class="right-side">
                 <nav>
                     <ul>
-                        <li class="nav-bar"><a href="#">About</a></li>
-                        <li class="nav-bar"><a href="#">Lingerie</a></li>
-                        <li class="nav-bar"><a href="#">Fragrances</a></li>
-                        <li class="nav-bar corner"><a href="#">The Corner</a></li>
-                        <i class='bx bx-search bx-sm'></i>
-                        <i class='bx bx-cart bx-sm'></i>
+                        <li class="nav-bar other-nav"><a href="#">About</a></li>
+                        <li class="nav-bar" id="lingerie"><a href="#">Lingerie</a></li>
+                        <li class="nav-bar" id="fragrances"><a href="#">Fragrances</a></li>
+                        <li class="nav-bar corner other-nav"><a href="#">The Corner</a></li>
+                        <i class='bx bx-search bx-sm other-nav'></i>
+                        <i class='bx bx-cart bx-sm other-nav'></i>
                     </ul>   
                 </nav>
             </div>
         </div>
+        <div class="nav-hover lingerie-nav"></div>
+        <div class="nav-hover fragrances-nav"></div>
         <div class="home">
             <div class="slide">
                 <div class="slideshow first-slide">
-                    <div class="screen"></div>
-                    <img src="./assets/pixie28.jpg" alt="first pixie slide">
+                    <img src="./assets/pixie14.jpg" alt="first pixie slide">
                 </div>
                 <div class="slideshow second-slide">
                     <img src="./assets/pixie10.jpg" alt="second pixie slide">
                 </div>
                 <div class="slideshow third-slide">
-                    <img src="./assets/pixie_bottle_main_second.jpg" alt="third pixie slide">
+                    <img src="./assets/pixie-parfum1.jpg" alt="third pixie slide">
                 </div>
             </div>
             <div class="dots">
@@ -63,32 +63,56 @@
             <div class="roll reg-circle"></div>
             <div class="pic">
                 <img src="./assets/pixie21.jpg">
+                <div class="click-hover">
+                    <div class="round"></div>
+                    <p>Click to view</p>
+                </div>
             </div>
             <div class="pic">
                 <img src="./assets/pixie3.jpg">
+                <div class="click-hover">
+                    <div class="round"></div>
+                    <p>Click to view</p>
+                </div>
             </div>
             <div class="pic">
                 <img src="./assets/pixie18.jpg">
+                <div class="click-hover">
+                    <div class="round"></div>
+                    <p>Click to view</p>
+                </div>
             </div>
             <div class="pic">
                 <img src="./assets/pixie12.jpg">
+                <div class="click-hover">
+                    <div class="round"></div>
+                    <p>Click to view</p>
+                </div>
             </div>
         </div>
         <div class="lingerie-intro">
-            <div class="lingerie-heading">
-                <h1>Every Pixie needs their wings</h1>
-            </div>
             <div class="lingerie-start">
                 <div class="lingerie-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis metus eget arcu tincidunt facilisis. Duis interdum, metus at bibendum auctor, mauris tortor porta arcu, non accumsan neque nisl eu justo. Curabitur sed justo lobortis, malesuada metus non, euismod nulla. Curabitur non diam euismod, vestibulum turpis sed, bibendum turpis.</p>
-                    <button class="btn">SHOP NOW</button>
+                    <h1>Every Pixie needs their wings</h1>
+                    <button class="btn lingerie">SHOP ALL LINGERIE</button>
                 </div>
                 <div class="lingerie-image">
                     <img src="./assets/pixie29.jpg" alt="green bra">
                 </div>
             </div>
-            <div class="lingerie-absolute">
-                <img src="./assets/pixie8.jpg" alt="two women">
+        </div>
+        <div class="slider-wrapper">
+            <i class='bx bx-chevron-left bx-md' id="previous"></i>
+            <i class='bx bx-chevron-right bx-md' id="next"></i>
+            <div class="slider">
+                <img src="./assets/pixie16.jpg" alt="green bra" id="first-image">
+                <img src="./assets/pixie4.jpg" alt="green bra">
+                <img src="./assets/pixie22.jpg" alt="green bra">
+                <img src="./assets/pixie15.jpg" alt="green bra">
+                <img src="./assets/pixie29.jpg" alt="green bra">
+                <img src="./assets/pixie29.jpg" alt="green bra">
+                <img src="./assets/pixie29.jpg" alt="green bra">
+                <img src="./assets/pixie29.jpg" alt="green bra">
             </div>
         </div>
         <div class="sleep-wear">
@@ -107,16 +131,22 @@
         <div class="sleep-wear-text">
             <div class="sleep-wear-content">
                 <p>Proin venenatis arcu urna, sed hendrerit magna ultrices vitae. Sed varius aliquam tortor, quis viverra massa aliquet nec. Nullam sed facilisis nulla. Proin nec sapien et ex scelerisque gravida sed scelerisque dui.</p>
-                <button class="btn sleep">Browse sleepwear</button>
+                <div class="sleep">
+                    <button class="btn">Browse sleepwear</button>
+                    <div class="circle-button"></div>
+                </div>
+                
             </div>
         </div>
         <div class="collection">
             <div class="collection-content">
-                <h1>Shop by collection</h1>
+                <h2>Shop by collection</h2>
                 <p>Discover which pair of lingerie or sleep set speaks to you.<br>Pixie has one for every mood. </p>
             </div>   
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="./assets/script.js"></script>
+    
 </body>
 </html>
