@@ -41,7 +41,7 @@ h1 {
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
-    padding: 10px 50px 0 50px;
+    padding: 10px 50px;
     z-index: 30;
     transition: .4s ease;
 }
@@ -105,7 +105,7 @@ h1 {
 .nav-hover {
     width: 100vw;
     height: 40%;
-    background-color: #FFFFFF;
+    background-color: #FFF9EF;
     position: fixed;
     top: 0;
     z-index: 20;
@@ -137,7 +137,7 @@ h1 {
 
 .slide {
     position: absolute;
-    top: -67px;
+    top: -77px;
     height: 100vh;
     width: 100vw;
     display: inline-flex;
@@ -508,12 +508,17 @@ h1 {
     transform: scale(1.03);
 }
 
-/*-------------LINGERIE COLLECTION-----------------*/
+/*-------------LINGERIE COLLECTION HEADING-----------------*/
 
 .collection {
     width: 100%;
     text-align: center;
-    margin-top: 10em;
+    margin-top: 8em;
+}
+
+.collection-heading {
+    width: 50%;
+    margin: 0 auto;
 }
 
 .collection h2 {
@@ -526,18 +531,215 @@ h1 {
     margin-top: -50px;
 }
 
+/*-------------LINGERIE COLLECTION CONTENT-----------------*/
 .collection-content {
-    width: 50%;
+    width: 300vw;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: .4s ease;
 }
 
-.sleep .btn:hover .sleep .circle-button {
-    visibility: visible;
+/*-------------LINGERIE COLLECTION CONTENT SLIDE 1-----------------*/
+.collection-slide1 {
+    position: relative;
+}
 
+.first-top, .first-bottom, .icon-button-next-slide1 {
+    position: absolute;
+    z-index: -20;
+    transition: .4 ease-in;
+}
+
+.collection-slide2 {
+    position: relative;
+}
+
+.second-top, .second-bottom, .icon-button-next-slide2, .icon-button-previous-slide2 {
+    position: absolute;
+    z-index: -20;
+    transition: .4 ease-in;
+} 
+
+.collection-slide3 {
+    position: relative;
+}
+
+.third-top, .third-bottom, .icon-button-previous-slide3 {
+    position: absolute;
+    z-index: -20;
+    transition: .4 ease-in;
+} 
+
+.icon-button-next-slide1, .icon-button-next-slide2, .icon-button-next-slide3, .icon-button-previous-slide2, .icon-button-previous-slide3 {
+    z-index: 10;
+} 
+
+.collection-slide1, .collection-slide2, .collection-slide3 {
+    width: 100vw;
+    padding-right: calc((100vh - (280px * 2 + 10em)) / 2);
+    padding-left: calc((100vh - (280px * 2 + 10em)) / 2);
+}
+
+.top-bar {
+    width: 590px;
+    height: 230px;
+    top: -13%;
+    left: 50%;
+}
+
+.first-top {
+    background-color: #FEDCAA;
+}
+
+.second-top {
+    background-color: #d7d6d6;
+    
+}
+
+.third-top {
+    background-color: #38512F;
+
+}
+
+.first-top, .second-top, .third-top {
+    opacity: 0;
+}
+
+.first-bottom, .second-bottom, .third-bottom {
+    opacity: 0;
+}
+
+.bottom-bar {
+    width: 760px;
+    height: 155px;
+    top: 90%;
+    left: 10%;
+}
+
+.first-bottom {
+    background-color: #B55930;
+}
+
+.second-bottom {
+    background-color: #723B3B;
+}
+
+.third-bottom {
+    background-color: #FFD4A9;
+}
+
+#title1, #title2, #title3 {
+    opacity: 0;
+}
+
+.collection-images {
+    margin-top: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10em;
+}
+
+.collection-images img {
+    width: 280px;
+    height: 400px;
+}
+
+.icon-button-next, .icon-button-previous {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #E5E5E5;
+    top: 30%;
+}
+
+.icon-button-next {
+    left: 80%;
+}
+
+.icon-button-previous {
+    left: 15%;
+}
+
+.icon-button-next i, .icon-button-previous i {
+    color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon-button-next:hover, .icon-button-previous:hover {
+    cursor: pointer;
+}
+
+.collection-title {
+    position: absolute;
+    text-align: center;
+    top: 95%;
+    left: 46%;
+    background-color: transparent;
+}
+
+.collection-title h5 {
+    font-family: "Italiana", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.collection-title .collection-btn {
+    margin-top: -10px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #FFF9EF;
+    padding: 4px 20px;
+    font-size: 12px;
+}
+
+.collection-title .collection-btn:hover {
+    cursor: pointer;
+}
+
+.btn-slide1 {
+    border: 2px solid #560E0E;
+}
+
+.shift {
+    transition: .45s ease;
+}
+
+.active {
+    animation: show .5s ease-in forwards; 
 }
 
 
 
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 
 @keyframes spin {
@@ -549,3 +751,4 @@ h1 {
         transform: rotate(360deg);
     }
 }
+
