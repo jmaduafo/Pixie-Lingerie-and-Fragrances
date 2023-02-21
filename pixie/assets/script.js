@@ -11,9 +11,30 @@ $(document).ready(function() {
     var leftIcons = $(".left-side i");
     var rightNav = $(".right-side a");
     var rightIcons = $(".right-side i");
+    var collectionContent = $(".shift");
+
+    const logoBlack = "assets/6.png";
+    const logoLight = "assets/5.png";
 
     //NAV BAR SCROLL
-    var oneFifty = 150;
+    $(window).on("scroll", function() {
+        // $(".nav-top").toggleClass("hide", $(window).scrollTop() > 150);
+        // oneFifty = $(window).scrollTop();
+        if ($(window).scrollTop() > 150) {
+            leftIcons.css("color", "#000000");
+            rightNav.css("color", "#000000");
+            rightIcons.css("color", "#000000");
+            $(".nav-top").css("background-color", "#FFF9EF");
+            $(".logo-nav").css("background-image", "url(" + logoBlack + ")");
+        } else {
+            leftIcons.css("color", "#FFF9EF");
+            rightNav.css("color", "#FFF9EF");
+            rightIcons.css("color", "#FFF9EF");
+            $(".nav-top").css("background-color", "transparent");
+            $(".logo-nav").css("background-image", "url(" + logoLight + ")");
+        }
+        
+    })
 
     //MAIN HOME SECTION 
     function shift() {
@@ -38,14 +59,11 @@ $(document).ready(function() {
         
     }
 
-    function autoplay() {
+    function autoplayMove() {
         i = setInterval(function() {
             move();}, 3500)
     }
 
-
-    const logoBlack = "assets/6.png";
-    const logoLight = "assets/5.png";
 
     function hoverLingerie() {
         lingerie.hover(function() {
@@ -102,43 +120,62 @@ $(document).ready(function() {
         })
     }
 
-    $(window).on("scroll", function() {
-        // $(".nav-top").toggleClass("hide", $(window).scrollTop() > 150);
-        // oneFifty = $(window).scrollTop();
-        if ($(window).scrollTop() > 150) {
-            leftIcons.css("color", "#000000");
-            rightNav.css("color", "#000000");
-            rightIcons.css("color", "#000000");
-            $(".nav-top").css("background-color", "#FFF9EF");
-            $(".logo-nav").css("background-image", "url(" + logoBlack + ")");
-        } else {
-            leftIcons.css("color", "#FFF9EF");
-            rightNav.css("color", "#FFF9EF");
-            rightIcons.css("color", "#FFF9EF");
-            $(".nav-top").css("background-color", "transparent");
-            $(".logo-nav").css("background-image", "url(" + logoLight + ")");
-        }
+    
+    
+    function collectionSlideNext(n) {
+        collectionContent.css("transform", "translateX(-" + n * 100 + "vw)");
         
-    })
+        $("#top"+ n + "").toggleClass("active");
+        $("#bottom" + n + "").toggleClass("active");
+        $("#title" + n + "").toggleClass("active");
+    
+        $("#top"+ (n+1) + "").toggleClass("active");
+        $("#bottom" + (n+1) + "").toggleClass("active");
+        $("#title" + (n+1) + "").toggleClass("active");
+
+    }
+    function collectionSlidePrevious(n) {
+        collectionContent.css("transform", "translateX(-" + n * 100 + "vw)")
+        
+        $("#top"+ (n+2) + "").toggleClass("active");
+        $("#bottom" + (n+2) + "").toggleClass("active");
+        $("#title" + (n+2) + "").toggleClass("active");
+
+        $("#top"+ (n+1) + "").toggleClass("active");
+        $("#bottom" + (n+1) + "").toggleClass("active");
+        $("#title" + (n+1) + "").toggleClass("active");
+
+
+    }
 
     
     hoverLingerie();
     hoverFragrance();
-    autoplay();
+    autoplayMove();
     autoplayShift();
 
+    var slideCount = 0;
+    $(".next-slide").on("click", function() {
+        slideCount++;
+        collectionSlideNext(slideCount);        
+    })
+
+    $(".previous-slide").on("click", function() {
+        slideCount--;
+        collectionSlidePrevious(slideCount);
+    })
 
     $("#next").on("click", function() {
         move();
         clearInterval(i);
-        autoplay();
+        autoplayMove();
 
     })
 
     $("#previous").on("click", function() {
         moveBack();
         clearInterval(i);
-        autoplay();
+        autoplayMove();
     })
   
 });
